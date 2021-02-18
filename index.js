@@ -101,7 +101,7 @@ Using the reviews array above do the following: (no function needed)
   2. log the whole array to the console, make sure the new review is inside of it   
 */
 
-const newChar = {name:'Prince', rathing:5, feedback:'best of them all'}
+const newChar = {name:'Prince', rating: 5, feedback:'best of them all'}
 reviews.push(newChar);
 console.log(reviews);
 
@@ -153,10 +153,11 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(arr) {
   /*Your code here*/
+  return `${arr[arr.length - 1].name} gave the restaurant a ${arr[arr.length - 1].rating} star review, and their feedback was: ${arr[arr.length - 1].feedback}`;
 } 
-
+console.log(getLastReview(reviews));
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
