@@ -20,6 +20,8 @@ function createMenuItem(name, price, category){
     return {name,price,category};
 }
 
+
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
 Test your createMenuItems function by doing the following:
@@ -29,7 +31,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+console.log(createMenuItem('tacos', 8, 'Lunch'));
+console.log(createMenuItem('burgers', 10, 'Lunch'));
+console.log(createMenuItem('pasta', 15, 'Dinner'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -50,7 +54,24 @@ export const burger = {
   price: 18, 
   category: "Lunch", 
   /*Your code here*/
+  discount: function(string){
+    if(string === 'teacher'){
+      return this.price * .75;
+    }
+    if(string === 'student'){
+      return this.price * .75;
+    }
+    if(string === 'public'){
+      return this.price *.9;
+    }
+    
+  }
 }
+
+console.log(burger.discount("teacher"));
+console.log(burger.discount("student"));
+console.log(burger.discount("public"));
+
 
 
 
@@ -71,7 +92,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-
+console.log(reviews[5]);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -80,6 +101,9 @@ Using the reviews array above do the following: (no function needed)
   2. log the whole array to the console, make sure the new review is inside of it   
 */
 
+const newChar = {name:'Prince', rathing:5, feedback:'best of them all'}
+reviews.push(newChar);
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -88,7 +112,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-
+reviews[7].feedback = 'forgot to add feedback';
+console.log(reviews);
 
 
 
@@ -103,9 +128,15 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(arr, number) {
   /*Your code here*/
+  return `${arr[number].name} gave the restaurant a ${arr[number].rating} star review, and their feedback was: ${arr[number].feedback}`;
+//   for(let i = 0; i <= reviews.length - 1; i++){
+
+//   }
 }
+
+console.log(getReviewByIndex(reviews,0));
 
 
   
